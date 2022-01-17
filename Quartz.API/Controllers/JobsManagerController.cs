@@ -23,15 +23,15 @@ namespace Quartz.API.Controllers
         {
             var scheduler = await _backgroundJobsSchedulerFactory.GetScheduler();
 
-            if (SimpleJob.IsRunning) // this property SHOULD BE cluster aware - should work in cloud ecosystem (check state of all VMs)
+            if (SimpleJob.IsRunning) // this property SHOULD BE cluster aware - should work in cloud ecosystem (checks state of all VMs)
             {
-                _logger.LogInformation($"Job {nameof(SimpleJob)} is currently running. Manual execution has been prevented.");
+                _logger.LogInformation($"{nameof(SimpleJob)} is currently running. Manual execution has been prevented.");
                 return BadRequest("Job is already running");
             }
 
             await scheduler.TriggerJob(new JobKey(nameof(SimpleJob)));
 
-            _logger.LogInformation($"Job {nameof(SimpleJob)} has been manually triggered.");
+            _logger.LogInformation($"{nameof(SimpleJob)} has been manually triggered.");
             return Ok();
         }
 
@@ -39,19 +39,19 @@ namespace Quartz.API.Controllers
         public async Task<IActionResult> CancelSimpleJobExecution()
         {
             var scheduler = await _backgroundJobsSchedulerFactory.GetScheduler();
-            var currentlyExecutingJobs = await scheduler.GetCurrentlyExecutingJobs(); // this method is NOT cluster aware - won't work in cloud ecosystem (won't check state of all VMs, only the single one which processes this request)
+            var currentlyExecutingJobs = await scheduler.GetCurrentlyExecutingJobs(); // this method is NOT cluster aware - won't work in cloud ecosystem (won't check state of all VMs, only checks the single VM which right now processes this request)
 
             var simpleJob = currentlyExecutingJobs.FirstOrDefault(x => x.JobDetail.Key.Name.Equals(nameof(SimpleJob)));
             if (simpleJob != null)
             {
-                _logger.LogInformation($"Job {simpleJob.JobDetail.Key} is being cancelled...");
+                _logger.LogInformation($"{simpleJob.JobDetail.Key} with id {simpleJob.FireInstanceId} : being cancelled...");
 
                 await scheduler.Interrupt(simpleJob.JobDetail.Key);
 
                 return Ok();
             }
 
-            return NotFound();
+            return NotFound($"No active instance of {nameof(SimpleJob)} has been found.");
         }
     }
 }

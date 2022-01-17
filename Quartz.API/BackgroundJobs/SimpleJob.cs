@@ -43,7 +43,7 @@
 
         public async Task Execute(IJobExecutionContext context)
         {
-            _logger.LogInformation($"{context.JobDetail.Key} execution started on threadId: '{Thread.CurrentThread.ManagedThreadId}' !");
+            _logger.LogInformation($"{context.JobDetail.Key} with id {context.FireInstanceId} : started.");
             try
             {
                 await _semaphore.WaitAsync();
@@ -52,7 +52,7 @@
                 // START - put Job's body here
                 await DoSomeBusinessLogicOperation(context.CancellationToken);
 
-                _logger.LogInformation($"{context.JobDetail.Key} has been executed!");
+                _logger.LogInformation($"{context.JobDetail.Key} with id {context.FireInstanceId} : finished in {context.JobRunTime} [hh:mm:ss.us]");
 
                 await Task.CompletedTask;
 

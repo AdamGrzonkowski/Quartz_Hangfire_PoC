@@ -13,7 +13,7 @@ namespace Quartz.API.Extensions
             string jobName = typeof(T).Name;
 
             // Try and load the schedule from configuration
-            var configKey = $"Quartz:{jobName}";
+            var configKey = $"Quartz:{jobName}CronSchedule";
             var cronSchedule = config[configKey];
 
             // Some minor validation

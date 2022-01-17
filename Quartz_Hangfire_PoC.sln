@@ -3,9 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quartz.API", "Quartz.API\Quartz.API.csproj", "{019B43A8-5A0C-40C9-96CD-4B36E6058724}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quartz.API", "Quartz.API\Quartz.API.csproj", "{019B43A8-5A0C-40C9-96CD-4B36E6058724}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hangfire.API", "Hangfire.API\Hangfire.API.csproj", "{19113896-F039-4635-857E-1DEF9011DDA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hangfire.API", "Hangfire.API\Hangfire.API.csproj", "{19113896-F039-4635-857E-1DEF9011DDA2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5B954959-14DB-4007-A096-06DE08F1EB81}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -75,7 +75,7 @@ try
 
     app.Run();
 }
-catch (Exception ex) // catches any exceptiosn thrown during start-up
+catch (Exception ex) // catches any exceptions thrown during start-up
 {
     Log.Fatal(ex, "Unhandled exception");
 }
