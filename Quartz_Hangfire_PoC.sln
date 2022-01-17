@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quartz.API", "Quartz.API\Quartz.API.csproj", "{019B43A8-5A0C-40C9-96CD-4B36E6058724}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hangfire.API", "Hangfire.API\Hangfire.API.csproj", "{19113896-F039-4635-857E-1DEF9011DDA2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{019B43A8-5A0C-40C9-96CD-4B36E6058724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{019B43A8-5A0C-40C9-96CD-4B36E6058724}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{019B43A8-5A0C-40C9-96CD-4B36E6058724}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{019B43A8-5A0C-40C9-96CD-4B36E6058724}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19113896-F039-4635-857E-1DEF9011DDA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19113896-F039-4635-857E-1DEF9011DDA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19113896-F039-4635-857E-1DEF9011DDA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19113896-F039-4635-857E-1DEF9011DDA2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {92CFCB42-AD4E-4432-A6FC-EE524FEF0C98}
+	EndGlobalSection
+EndGlobal
